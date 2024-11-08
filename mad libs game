@@ -1,0 +1,34 @@
+def mad_libs():
+    # Prompt the user for various words
+    noun1 = input("Enter a noun: ")
+    adjective1 = input("Enter an adjective: ")
+    verb1 = input("Enter a verb: ")
+    noun2 = input("Enter another noun: ")
+    adjective2 = input("Enter another adjective: ")
+    place = input("Enter a place: ")
+    verb2 = input("Enter another verb: ")
+    
+    # Story template with placeholders for user input
+    story_template = (
+        "Once upon a time, there was a {noun1} who was very {adjective1}. "
+        "Every day, it would {verb1} in the {place}. One day, it met a {adjective2} {noun2} "
+        "who loved to {verb2}. They became best friends and lived happily ever after."
+    )
+    
+    # Fill in the placeholders with user input
+    story = story_template.format(
+        noun1=noun1,
+        adjective1=adjective1,
+        verb1=verb1,
+        noun2=noun2,
+        adjective2=adjective2,
+        place=place,
+        verb2=verb2
+    )
+    
+    # Print the final story
+    print("\nHere is your story:")
+    print(story)
+
+# Run the Mad Libs game
+mad_libs()
