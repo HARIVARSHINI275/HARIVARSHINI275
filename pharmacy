@@ -1,0 +1,49 @@
+#include <stdio.h>
+}
+
+int main() {
+    struct Medicine inventory[100]; // Array to hold medicines
+    int numMedicines = 0; // Variable to track the number of medicines
+    int choice;
+    char medicineName[50];
+    int newQuantity;
+
+    do {
+        printf("\nMenu:\n");
+        printf("1. Add Medicine\n");
+        printf("2. Search Medicine\n");
+        printf("3. Update Medicine Quantity\n");
+        printf("4. Display Inventory\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                addMedicine(inventory, &numMedicines);
+                break;
+            case 2:
+                printf("Enter medicine name to search: ");
+                scanf("%s", medicineName);
+                searchMedicine(inventory, numMedicines, medicineName);
+                break;
+            case 3:
+                printf("Enter medicine name to update quantity: ");
+                scanf("%s", medicineName);
+                printf("Enter new quantity: ");
+                scanf("%d", &newQuantity);
+                updateQuantity(inventory, numMedicines, medicineName, newQuantity);
+                break;
+            case 4:
+                displayInventory(inventory, numMedicines);
+                break;
+            case 5:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while (choice != 5);
+
+    return 0;
+}
